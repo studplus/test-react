@@ -12,4 +12,3 @@ services:
     - 80:3000
     volumes:
       - ./:/var/www/wohngeld:delegated
-      - ./.docker/php/ini/conf.d/memory_limit.ini:/usr/local/etc/php/conf.d/memory_limit.ini
