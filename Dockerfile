@@ -12,8 +12,8 @@ COPY package.json ./
 COPY package-lock.json ./
 RUN npm install --silent && npm install -g npm@7
 RUN npm install react-scripts@3.4.1 -g --silent
-RUN npm update /
-    && npm -v /
+RUN npm update \
+    && npm -v \
     && node -v
 
 # add app
