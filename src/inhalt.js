@@ -5,7 +5,7 @@ import classes from "./inhalt.module.css";
 
 const Inhalt = (props) => {
 
-    dumpLogs(props);
+    //dumpLogs(props);
     return(
         <div className={classes.TestClass}>
             <h3>{props.title}</h3>
