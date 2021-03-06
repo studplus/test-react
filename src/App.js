@@ -12,22 +12,37 @@ class App extends React.Component {
     {
       id: 1,
       title: 'Titel 1',
-      beschreibung: 'Beschreibung 1'
+      beschreibung: 'Beschreibung 1',
+      anzahlLikes: 0,
     },
     {
       id: 2,
       title: 'Titel 2',
-      beschreibung: 'Beschreibung 2'
+      beschreibung: 'Beschreibung 2',
+      anzahlLikes: 0,
     },
     {
       id: 3,
       title: 'Titel 3',
-      beschreibung: 'Beschreibung 3'
+      beschreibung: 'Beschreibung 3',
+      anzahlLikes: 0,
     }
   ]
 
+  onLikeBtnClick = () => {
+    alert('Klick erhalten');
+    // this.setState((prevState, prevProp)=> {
+    //   return {anzahlLikes: prevState.anzahlLikes + 1}
+    // });
+  }
+
   inhalte = isInhaltArrayEmpty(this.inhArr) ? [] : this.inhArr.map((item, pos) =>{
-    return <Inhalt className={'TestName'} key={pos} title={item.title} beschreibung={item.beschreibung} id={item.id} />
+    return (
+        <Inhalt className={'TestName'} key={pos} title={item.title}
+                beschreibung={item.beschreibung} anzahlLikes={item.anzahlLikes} id={item.id}
+                onLikeBtnClick={this.onLikeBtnClick}
+        />
+    )
   })
 
   onHideBtnClick = () => {

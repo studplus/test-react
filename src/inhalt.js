@@ -1,31 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import{ dumpLogs } from "./Utils";
 import classes from "./inhalt.module.css";
 
-class Inhalt extends Component {
-    state = {
-        anzahlLikes: 0
-    }
+const Inhalt = (props) => {
 
-    onLikeBtnClick = () => {
-        this.setState((prevState, prevProp)=> {
-          return {anzahlLikes: prevState.anzahlLikes + 1}
-        });
-    }
+    dumpLogs(props);
+    return(
+        <div className={classes.TestClass}>
+            <h3>{props.title}</h3>
+            <p>{props.beschreibung}</p>
 
-    render(){
-        dumpLogs(this.props)
-        return(
-            <div className={classes.TestClass}>
-                <h3>{this.props.title}</h3>
-                <p>{this.props.beschreibung}</p>
-
-                <p>Anzahl Likes: <span className={classes.AnzahlLikes}>{this.state.anzahlLikes}</span></p>
-                <button onClick={this.onLikeBtnClick}>Like</button>
-            </div>
-        )
-    }
+            <p>Anzahl Likes: <span className={classes.AnzahlLikes}>{props.anzahlLikes}</span></p>
+            <button onClick={props.onLikeBtnClick}>Like</button>
+        </div>
+    )
 }
 
 export default Inhalt;
