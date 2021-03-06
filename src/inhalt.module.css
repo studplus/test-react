@@ -5,6 +5,17 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px #ccc;
     background-color: lightblue;
+
+    font-size: 24px;
+}
+
+.TestClass > button {
+    font-size: 24px;
+}
+
+.AnzahlLikes {
+    font-weight: 600;
+    font-size: 28px;
 }
 
 @media (min-width: 992px) {
