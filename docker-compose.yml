@@ -6,9 +6,9 @@ services:
   # APP Service
   app:
     build: ./
-    working_dir: /var/www/wohngeld
+    working_dir: /var/www/app
     container_name: test_react_app
     ports:
     - 80:3000
     volumes:
-      - ./:/var/www/wohngeld:delegated
+      - ./:/var/www/app:delegated
